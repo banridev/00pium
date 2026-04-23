@@ -1,0 +1,247 @@
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    background-color: #000; 
+    color: #fff; 
+    font-family: 'Courier New', Courier, monospace;
+    overflow-x: hidden;
+}
+
+/* 1. NAVBAR */
+nav { 
+    display: flex; 
+    justify-content: space-between; 
+    padding: 30px; 
+    border-bottom: 2px solid rgba(255, 0, 0, 0.7); 
+}
+
+nav ul { 
+    display: flex; 
+    list-style: none; 
+    gap: 25px; 
+}
+
+nav a { 
+    color: #fff; 
+    text-decoration: none; 
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+nav a:hover { 
+    color: #FF0000; 
+}
+
+#logo {
+    font-weight: none;
+}
+
+/* 2. HERO & SLIDING TEXT */
+.hero { 
+    height: 50vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border-bottom: 0.1px solid rgba(255, 0, 0, 0.7);
+}
+
+.mask {
+    width: 500px; 
+    overflow: hidden; 
+    border: 0.1px solid rgba(255, 0, 0, 0.17);
+    padding: 10px;
+    background: #000;
+}
+
+.sliding-text {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    white-space: nowrap; 
+    display: inline-block;
+    color: #fff;
+    animation: slideText 12s linear infinite;
+}
+
+@keyframes slideText {
+    0%   { transform: translateX(0%); } 
+    50%  { transform: translateX(-40%); } 
+    100% { transform: translateX(0%); } 
+}
+
+/* 3. ARTIST LIST (DETAILS) */
+.artist-list {
+    padding: 60px 40px;
+    border-bottom: 2px solid rgba(255, 0, 0, 0.7);
+}
+
+.artist-list h2 {
+    color: #FF0000;
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+details summary::-webkit-details-marker { display: none; }
+details summary { 
+    list-style: none; 
+    cursor: crosshair; 
+    font-size: 2rem; 
+    padding: 15px 0;
+    transition: 0.3s;
+}
+
+details summary:hover { color: #FF0000; padding-left: 20px; }
+
+.artist-list details ul {
+    list-style: none;
+    padding: 10px 0 20px 20px;
+}
+
+.artist-list details li {
+    font-size: 1.2rem;
+    color: #888;
+    padding: 5px 0;
+    text-transform: uppercase;
+    transition: 0.2s;
+}
+
+.artist-list details li:hover { color: #fff; }
+
+/* 4. GRID CONTAINER & CARDS */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 40px;
+}
+
+.card {
+    border: 2px solid rgba(255, 0, 0, 0.7); 
+    padding: 40px;
+    text-align: center;
+    background: #0a0a0a;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    background: #111;
+}
+
+.card h3 { 
+    color: #FF0000; 
+    margin-bottom: 15px; 
+    text-transform: uppercase;
+}
+
+/* 5. FOOTER */
+footer { 
+    padding: 40px; 
+    text-align: center; 
+    border-top: 2px solid rgba(255, 0, 0, 0.7);
+    color: #FF0000;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 6. RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .grid-container { grid-template-columns: 1fr; }
+    .mask { width: 90%; }
+    .sliding-text { font-size: 1.5rem; }
+    footer { flex-direction: column; gap: 10px; }
+}
+
+/* Efeito de Granulado/Ruído Opium no site inteiro */
+body::before {
+    content: "";
+    position: fixed; /* Fica fixo na tela enquanto você rola */
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    /* Imagem de textura sutil (pode ser um padrão sutil ou ruído) */
+    background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+    opacity: 0.03; /* MUITO sutil, para não atrapalhar a leitura */
+    pointer-events: none; /* Garante que você consiga clicar nos links atrás dele */
+    z-index: 9999; /* Fica acima de tudo */
+}
+
+/* artists.html */
+
+.artist-profile-container {
+    padding: 80px 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.artist-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
+    gap: 60px;
+    align-items: start;
+}
+
+.image-box img {
+    width: 75%;
+    height: auto;
+    border: 2px solid rgba(255, 0, 0, 0.7);
+    filter: grayscale(100%) contrast(1.2);
+}
+
+.booking-info h1 {
+    font-size: 4rem;
+    letter-spacing: -2px;
+    margin-bottom: 10px;
+}
+
+.status {
+    color: #FF0000;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    border: 1px solid #FF0000;
+    padding: 5px 10px;
+}
+
+.info-block {
+    margin: 30px 0;
+    border-left: 2px solid #333;
+    padding-left: 20px;
+}
+
+.info-block h3 {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.btn-book {
+    display: inline-block;
+    padding: 15px 40px;
+    background: #FF0000;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.btn-book:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* Responsividade: Ficha técnica vira coluna única no mobile */
+@media (max-width: 768px) {
+    .artist-header {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .artist-header h1 { font-size: 2.5rem; }
+}
