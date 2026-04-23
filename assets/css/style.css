@@ -137,6 +137,7 @@ details summary:hover { color: #FF0000; padding-left: 20px; }
     color: #FF0000; 
     margin-bottom: 15px; 
     text-transform: uppercase;
+    text-decoration: none;
 }
 
 /* 5. FOOTER */
@@ -193,7 +194,7 @@ body::before {
     width: 75%;
     height: auto;
     border: 2px solid rgba(255, 0, 0, 0.7);
-    filter: grayscale(100%) contrast(1.2);
+    filter: grayscale(100%) contrast(1.2) brightness(0.8);
 }
 
 .booking-info h1 {
@@ -244,4 +245,51 @@ body::before {
         gap: 30px;
     }
     .artist-header h1 { font-size: 2.5rem; }
+}
+
+.tour-container { padding: 60px 40px; max-width: 1000px; margin: 0 auto; }
+
+.tour-block {
+    display: grid;
+    grid-template-columns: 300px 1fr; /* Imagem fixa + lista de datas */
+    gap: 50px;
+    margin-bottom: 80px;
+    align-items: start;
+}
+
+.date-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #333;
+    font-family: 'Courier New', monospace;
+}
+
+.date { font-weight: bold; color: #fff; }
+.venue { color: #888; text-transform: uppercase; font-size: 0.9rem; }
+
+.buy-btn {
+    border: 1px solid #FF0000;
+    color: #FF0000;
+    padding: 5px 15px;
+    text-decoration: none;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+.buy-btn:hover { background: #FF0000; color: #000; }
+
+.section-title {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    font-size: 3rem;
+    padding-bottom: 7%;
+}
+
+/* Ajuste para mobile: a imagem fica em cima das datas */
+@media (max-width: 768px) {
+    .tour-block { grid-template-columns: 1fr; }
+    .date-item { flex-direction: column; gap: 10px; align-items: flex-start; }
 }
