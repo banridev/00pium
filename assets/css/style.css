@@ -51,7 +51,7 @@ nav a:hover {
 }
 
 .mask {
-    width: 500px; 
+    width: 650px; 
     overflow: hidden; 
     border: 0.1px solid rgba(255, 0, 0, 0.17);
     padding: 10px;
@@ -64,7 +64,7 @@ nav a:hover {
     white-space: nowrap; 
     display: inline-block;
     color: #fff;
-    animation: slideText 12s linear infinite;
+    animation: slideText 7s linear infinite;
 }
 
 @keyframes slideText {
@@ -137,6 +137,11 @@ details summary:hover { color: #FF0000; padding-left: 20px; }
     color: #FF0000; 
     margin-bottom: 15px; 
     text-transform: uppercase;
+    text-decoration: none;
+}
+
+a {
+    color: inherit;
     text-decoration: none;
 }
 
@@ -285,6 +290,14 @@ body::before {
     align-items: center; 
     justify-content: center;
     font-size: 3rem;
+    padding-bottom: 3%;
+}
+
+.section-subtitle {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    font-size: 1.7rem;
     padding-bottom: 7%;
 }
 
