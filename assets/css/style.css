@@ -301,8 +301,41 @@ body::before {
     padding-bottom: 7%;
 }
 
-/* Ajuste para mobile: a imagem fica em cima das datas */
-@media (max-width: 768px) {
-    .tour-block { grid-template-columns: 1fr; }
-    .date-item { flex-direction: column; gap: 10px; align-items: flex-start; }
+.merch-container { padding: 80px 40px; }
+
+.merch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.merch-card {
+    text-align: center;
+    background: #000;
+    transition: 0.3s;
+}
+
+.merch-card img {
+    width: 80%; 
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 1px solid #1a1a1a;
+}
+
+.merch-card:hover img {
+    border-color: rgba(255, 0, 0, 0.7);
+}
+
+.merch-card h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.merch-card .price {
+    font-family: 'Courier New', monospace;
+    color: #888;
+    font-size: 0.9rem;
 }
