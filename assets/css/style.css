@@ -47,7 +47,6 @@ nav a:hover {
     display: flex; 
     align-items: center; 
     justify-content: center; 
-    border-bottom: 0.1px solid rgba(255, 0, 0, 0.7);
 }
 
 .mask {
@@ -199,7 +198,6 @@ body::before {
     width: 75%;
     height: auto;
     border: 2px solid rgba(255, 0, 0, 0.7);
-    filter: grayscale(100%) contrast(1.2) brightness(0.8);
 }
 
 .booking-info h1 {
@@ -233,8 +231,11 @@ body::before {
     background: #FF0000;
     color: #000;
     text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     text-transform: uppercase;
+    border: none;
+    cursor: pointer;
     transition: 0.3s;
 }
 
@@ -338,4 +339,177 @@ body::before {
     font-family: 'Courier New', monospace;
     color: #888;
     font-size: 0.9rem;
+}
+
+/* booking.html */
+.booking-page {
+    padding: 80px 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.booking-form-container {
+    max-width: 550px;
+    margin: 0 auto 40px auto;
+    padding: 40px;
+    background: #000;
+    border: 1px solid #1a1a1a;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    background: #000;
+    border: 1px solid #333;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #FF0000;
+}
+
+.booking-form-container .btn-book {
+    width: 100%;
+    font-size: 1rem;
+}
+
+.glitch-img {
+    filter: grayscale(100%) contrast(130%) brightness(0.85);
+    object-fit: cover;
+    transition: filter 0.3s ease;
+}
+
+.glitch-img:hover {
+    filter: grayscale(100%) contrast(150%) brightness(1);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-text-fill-color: #fff !important;
+    -webkit-box-shadow: 0 0 0 30px #000 inset !important;
+    box-shadow: 0 0 0 30px #000 inset !important;
+}
+
+.custom-checkbox-group {
+    text-align: left;
+    background: #000;
+    border: 1px solid #333;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.custom-checkbox-group:focus-within {
+    border-color: #FF0000;
+}
+
+.checkbox-label {
+    color: #888;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.checkboxes label {
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.2s;
+}
+
+.checkboxes label:hover {
+    color: #FF0000;
+}
+
+.checkboxes input[type="checkbox"] {
+    accent-color: #FF0000;
+    width: 16px !important;
+    height: 16px !important;
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.api-container {
+    padding: 60px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.api-desc {
+    font-family: 'Courier New', monospace;
+    color: #555;
+    font-size: 0.8rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.api-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.api-card {
+    background: #000;
+    border: 1px solid #1a1a1a;
+    padding: 20px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.api-card:hover {
+    border-color: #FF0000;
+}
+
+.api-card h4 {
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+}
+
+.api-card p {
+    font-family: 'Courier New', monospace;
+    color: #888;
+    font-size: 0.8rem;
+    margin: 8px 0;
+}
+
+.api-card p strong {
+    color: #555;
+}
+
+.loading-text {
+    font-family: 'Courier New', monospace;
+    color: #FF0000;
+    text-align: center;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
 }

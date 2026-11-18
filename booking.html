@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OPIUM | LABELS</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicons/favicon.ico">
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><a id="logo" href="index.html">OPIUM</a></div>
+        <ul>
+            <li><a href="artists.html">ARTISTS</a></li>
+            <li><a href="tour.html">TOUR</a></li>
+            <li><a href="merch.html">MERCH</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+        </ul>
+    </nav>
+
+    <main class="booking-page">
+        <h2 class="section-title">ARTIST INQUIRY / SYSTEM</h2>
+
+        <section class="booking-form-container">
+            <form id="bookingForm">
+                <input type="hidden" id="editId">
+                
+                <div class="input-group">
+                    <input type="text" id="nome" placeholder="FULL NAME" autocomplete="off" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="telefone" placeholder="PHONE: (00) 00000-0000" maxlength="15" autocomplete="off" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="EMAIL ADDRESS" autocomplete="off" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="dataAluguel" placeholder="RENTAL DATE: DD/MM/YYYY" maxlength="10" autocomplete="off" required>
+                </div>
+
+                <div class="input-group custom-checkbox-group">
+                    <p class="checkbox-label">SELECT ARTIST(S):</p>
+                    <div class="checkboxes">
+                        <label><input type="checkbox" name="artista" value="CARTI"> PLAYBOI CARTI</label>
+                        <label><input type="checkbox" name="artista" value="CARSON"> KEN CARSON</label>
+                        <label><input type="checkbox" name="artista" value="DESTROY"> DESTROY LONELY</label>
+                        <label><input type="checkbox" name="artista" value="HXG"> HOMIXIDE GANG</label>
+                    </div>
+                </div>
+
+                <button type="submit" id="submitBtn" class="btn-book">SUBMIT INQUIRY</button>
+            </form>
+        </section>
+
+        <section class="api-container">
+            <h2 class="section-title">OPIUM ARCHIVE / API DATA</h2>
+            <p class="api-desc">Fetching live JSON data from Supabase REST API...</p>
+            
+            <section id="apiGrid" class="api-grid">
+                <p class="loading-text">DECRYPTING ARCHIVE...</p>
+            </section>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="assets/js/booking.js" defer></script>
+    <script src="assets/js/api.js" defer></script>
+</body>
+</html>
