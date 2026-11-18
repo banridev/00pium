@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>OPIUM | LABELS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPIUM | MERCH</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/x-icon" href="assets/favicons/favicon.ico">
 </head>
@@ -13,33 +14,67 @@
         <ul>
             <li><a href="artists.html">ARTISTS</a></li>
             <li><a href="tour.html">TOUR</a></li>
-            <li><a href="merch.html">MERCH</a></li>
+            <li><a href="merch.html" class="active">MERCH</a></li>
+            <li><a href="about.html">ABOUT</a></li>
         </ul>
     </nav>
 
     <main class="merch-container">
-    <h2 class="section-title">ARCHIVE STORE</h2>
+        <h2 class="section-title">ARCHIVE STORE</h2>
 
-    <section class="merch-grid">
-        <div class="merch-card">
-            <img src="assets/img/tshirt.jpg" alt="Merch" class="glitch-img">
-            <h3>BOXY T-SHIRT</h3>
-            <p class="price">$50,00</p>
-        </div>
-        
-        <div class="merch-card">
-            <img src="assets/img/hoodie.jpg" alt="Hoodie" class="glitch-img">
-            <h3>HOODIE ANTAGONIST</h3>
-            <p class="price">$90,00</p>
-        </div>
+        <section class="merch-grid">
+            <div class="merch-card">
+                <img src="assets/img/tshirt.jpg" alt="Boxy T-Shirt">
+                <h3>BOXY T-SHIRT</h3>
+                <p class="price">$50,00</p>
+                <div class="merch-cta">
+                    <button type="button" class="buy-btn merch-buy-btn" data-item="BOXY T-SHIRT" data-price="$50,00" data-img="assets/img/tshirt.jpg">BUY ITEM</button>
+                </div>
+            </div>
 
-        <div class="merch-card">
-            <img src="assets/img/allred.jpg" alt="Hoodie" class="glitch-img">
-            <h3>ALL RED BOXY TEE</h3>
-            <p class="price">$50,00</p>
+            <div class="merch-card">
+                <img src="assets/img/hoodie.jpg" alt="Hoodie Antagonist">
+                <h3>HOODIE ANTAGONIST</h3>
+                <p class="price">$90,00</p>
+                <div class="merch-cta">
+                    <button type="button" class="buy-btn merch-buy-btn" data-item="HOODIE ANTAGONIST" data-price="$90,00" data-img="assets/img/hoodie.jpg">BUY ITEM</button>
+                </div>
+            </div>
+
+            <div class="merch-card">
+                <img src="assets/img/allred.jpg" alt="All Red Boxy Tee">
+                <h3>ALL RED BOXY TEE</h3>
+                <p class="price">$50,00</p>
+                <div class="merch-cta">
+                    <button type="button" class="buy-btn merch-buy-btn" data-item="ALL RED BOXY TEE" data-price="$50,00" data-img="assets/img/allred.jpg">BUY ITEM</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Minimalist Opium Archive Order Modal -->
+    <div id="merchModal" class="opium-modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalItemTitle">
+        <div class="opium-modal-content">
+            <button type="button" id="closeMerchModal" class="opium-modal-close" aria-label="Close modal">[X]</button>
+            <p class="opium-modal-tag">ARCHIVE DROP // NO RESTOCKS</p>
+            <img id="modalItemImg" src="assets/img/tshirt.jpg" alt="Boxy T-Shirt" class="modal-item-img">
+            <h3 id="modalItemTitle">ITEM</h3>
+            <p id="modalItemPrice" class="price">$0,00</p>
+
+            <div class="size-selector">
+                <p class="checkbox-label">SELECT SIZE:</p>
+                <div class="size-options" id="sizeOptions">
+                    <button type="button" class="size-btn" data-size="S">S</button>
+                    <button type="button" class="size-btn active" data-size="M">M</button>
+                    <button type="button" class="size-btn" data-size="L">L</button>
+                    <button type="button" class="size-btn" data-size="XL">XL</button>
+                </div>
+            </div>
+
+            <p id="merchStatusMsg" class="opium-status-msg"></p>
+            <button type="button" id="confirmOrderBtn" class="btn-book">RESERVE PIECE</button>
         </div>
-    </section>
-</main>
+    </div>
 
     <footer>
         <p>CONTACT: INFO@OPIUM.LAB</p>
@@ -47,5 +82,6 @@
         <p>SHIPPING WORLDWIDE. NO REFUNDS.</p>
     </footer>
 
+    <script src="assets/js/merch.js" defer></script>
 </body>
 </html>

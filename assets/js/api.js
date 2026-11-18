@@ -4,6 +4,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const SUPABASE_URL = "https://rkityybavauyjgifcygd.supabase.co";
     const SUPABASE_KEY = "sb_publishable_ttPcuBHfaDH4fEOGUK-OWQ_BFVxtPe_";
 
+    function createFieldLine(label, value) {
+        const p = document.createElement('p');
+        const strong = document.createElement('strong');
+        strong.textContent = `${label}: `;
+        p.appendChild(strong);
+        p.appendChild(document.createTextNode(value || 'N/A'));
+        return p;
+    }
+
     async function fetchOpiumDatabase() {
         if (!apiGrid) return;
 
@@ -26,26 +35,37 @@ document.addEventListener("DOMContentLoaded", () => {
             const data = await response.json();
             apiGrid.innerHTML = '';
 
-            if (data.length === 0) {
-                apiGrid.innerHTML = '<p style="color: #888; text-align: center;">NO RECORDS FOUND IN ARCHIVE.</p>';
+            if (!Array.isArray(data) || data.length === 0) {
+                const emptyMsg = document.createElement('p');
+                emptyMsg.className = 'api-status-note';
+                emptyMsg.textContent = 'NO RECORDS FOUND IN ARCHIVE.';
+                apiGrid.appendChild(emptyMsg);
                 return;
             }
 
             data.forEach(item => {
-                const card = `
-                    <div class="api-card">
-                        <h4>${item.nome}</h4>
-                        <p><strong>ARTIST:</strong> ${item.artista}</p>
-                        <p><strong>DATE:</strong> ${item.data_aluguel}</p>
-                        <p><strong>CONTACT:</strong> ${item.telefone}</p>
-                    </div>
-                `;
-                apiGrid.innerHTML += card;
+                const card = document.createElement('article');
+                card.className = 'api-card';
+
+                const title = document.createElement('h4');
+                title.textContent = item.nome || 'UNNAMED ENTRY';
+
+                card.appendChild(title);
+                card.appendChild(createFieldLine('ARTIST', item.artista));
+                card.appendChild(createFieldLine('DATE', item.data_aluguel));
+                card.appendChild(createFieldLine('CONTACT', item.telefone));
+
+                apiGrid.appendChild(card);
             });
 
         } catch (error) {
             console.error("Erro ao consumir a API do Supabase:", error);
-            apiGrid.innerHTML = '<p style="color: red; text-align: center;">[ERROR] DB CONNECTION FAILED.</p>';
+            apiGrid.innerHTML = '';
+
+            const errorBox = document.createElement('p');
+            errorBox.className = 'api-status-error';
+            errorBox.textContent = '[ERROR] DB CONNECTION FAILED // CHECK SUPABASE PROJECT STATUS.';
+            apiGrid.appendChild(errorBox);
         }
     }
 

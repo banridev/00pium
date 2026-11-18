@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>OPIUM | LABELS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPIUM | BOOKING</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/x-icon" href="assets/favicons/favicon.ico">
 </head>
@@ -22,9 +23,9 @@
         <h2 class="section-title">ARTIST INQUIRY / SYSTEM</h2>
 
         <section class="booking-form-container">
-            <form id="bookingForm">
+            <form id="bookingForm" novalidate>
                 <input type="hidden" id="editId">
-                
+
                 <div class="input-group">
                     <input type="text" id="nome" placeholder="FULL NAME" autocomplete="off" required>
                 </div>
@@ -48,19 +49,46 @@
                     </div>
                 </div>
 
+                <p id="formFeedback" class="opium-status-msg" role="status" aria-live="polite"></p>
                 <button type="submit" id="submitBtn" class="btn-book">SUBMIT INQUIRY</button>
             </form>
         </section>
 
+        <!-- TABELA DE EXIBIÇÃO DO CRUD (Opcional / Oculta) -->
+        <!--
+        <section class="crud-container">
+            <h3>LOGGED INQUIRIES</h3>
+            <table class="crud-table">
+                <thead>
+                    <tr>
+                        <th>NAME</th>
+                        <th>PHONE</th>
+                        <th>EMAIL</th>
+                        <th>DATE</th>
+                        <th>ARTIST</th>
+                        <th>ACTIONS</th>
+                    </tr>
+                </thead>
+                <tbody id="crudTableBody"></tbody>
+            </table>
+        </section>
+        -->
+
         <section class="api-container">
             <h2 class="section-title">OPIUM ARCHIVE / API DATA</h2>
             <p class="api-desc">Fetching live JSON data from Supabase REST API...</p>
-            
+
             <section id="apiGrid" class="api-grid">
                 <p class="loading-text">DECRYPTING ARCHIVE...</p>
             </section>
         </section>
     </main>
+
+    <footer>
+        <p>CONTACT: INFO@OPIUM.LAB</p>
+        <p>&copy; 2026 OPIUM LABELS. ALL RIGHTS RESERVED.</p>
+        <p>SHIPPING WORLDWIDE. NO REFUNDS.</p>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="assets/js/booking.js" defer></script>

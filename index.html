@@ -10,6 +10,7 @@ by aka miguel BILLY & gner.MODA
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OPIUM | LABELS</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/x-icon" href="assets/favicons/favicon.ico">
@@ -22,63 +23,88 @@ by aka miguel BILLY & gner.MODA
             <li><a href="artists.html">ARTISTS</a></li>
             <li><a href="tour.html">TOUR</a></li>
             <li><a href="merch.html">MERCH</a></li>
+            <li><a href="about.html">ABOUT</a></li>
         </ul>
     </nav>
 
-    <header class="hero">
-        <div class="mask">
-            <h1 class="sliding-text">CHARGE DEM HOES A FEE WITHOUT A GOOD CREDIT</h1>
+    <header class="hero-carousel" aria-label="Opium Roster Gallery">
+        <div class="carousel-wrapper">
+            <div class="carousel-container">
+                <div class="carousel-slide active" data-artist="PLAYBOI CARTI">
+                    <img src="assets/img/carti.jpg" alt="Playboi Carti" class="glitch-img">
+                </div>
+                <div class="carousel-slide" data-artist="KEN CARSON">
+                    <img src="assets/img/carson.jpg" alt="Ken Carson" class="glitch-img">
+                </div>
+                <div class="carousel-slide" data-artist="DESTROY LONELY">
+                    <img src="assets/img/destroy.jpg" alt="Destroy Lonely" class="glitch-img">
+                </div>
+                <div class="carousel-slide" data-artist="HOMIXIDE GANG">
+                    <img src="assets/img/hmx.jpg" alt="Homixide Gang" class="glitch-img">
+                </div>
+
+                <button type="button" class="carousel-btn prev-btn" aria-label="Previous artist">&lt;</button>
+                <button type="button" class="carousel-btn next-btn" aria-label="Next artist">&gt;</button>
+            </div>
+            <div class="carousel-meta">
+                <span id="carouselCounter">[01 / 04]</span>
+                <span id="carouselArtistName">PLAYBOI CARTI</span>
+            </div>
         </div>
     </header>
 
     <main>
         <section class="artist-list">
-    <h2>CURRENT ROSTER</h2>
-    
-    <details>
-        <summary>[001] CARTI</summary>
-        <ul>
-            <li>MUSIC</li>
-            <li>Whole Lotta Red</li>
-            <li>Die Lit</li>
-            <li>Self Titled</li>
-        </ul>
-    </details>
+            <h2>CURRENT ROSTER</h2>
 
-    <details>
-        <summary>[002] KEN CARSON</summary>
-        <ul>
-            <li>A Great Chaos</li>
-            <li>X</li>
-            <li>Project X</li>
-        </ul>
-    </details>
+            <details>
+                <summary>[001] CARTI</summary>
+                <ul>
+                    <li>MUSIC</li>
+                    <li>Whole Lotta Red</li>
+                    <li>Die Lit</li>
+                    <li>Self Titled</li>
+                </ul>
+            </details>
 
-    <details>
-        <summary>[003] DESTROY LONELY</summary>
-        <ul>
-            <li>If Looks Could Kill</li>
-            <li>NO STYLIST</li>
-        </ul>
-    </details>
+            <details>
+                <summary>[002] KEN CARSON</summary>
+                <ul>
+                    <li>A Great Chaos</li>
+                    <li>X</li>
+                    <li>Project X</li>
+                </ul>
+            </details>
 
-    <details>
-        <summary>[004] HOMIXIDE GANG</summary>
-        <ul>
-            <li>Homixide Lifestyle 2</li>
-            <li>5TH AMNDMNT</li>
-        </ul>
-    </details>
-</section>
+            <details>
+                <summary>[003] DESTROY LONELY</summary>
+                <ul>
+                    <li>If Looks Could Kill</li>
+                    <li>NO STYLIST</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>[004] HOMIXIDE GANG</summary>
+                <ul>
+                    <li>Homixide Lifestyle 2</li>
+                    <li>5TH AMNDMNT</li>
+                </ul>
+            </details>
+        </section>
 
         <section class="grid-container">
             <div class="card">
-                <h3><a href="tour.html">BOOKING</a></h3>
-                <p>Global touring and event management.</p>
+                <a href="booking.html" class="card-link">
+                    <h3>BOOKING</h3>
+                    <p>Global touring and event management.</p>
+                </a>
             </div>
             <div class="card">
-                <h3><a href="merch.html">MERCH</a></h3>
-                <p>ARCHIVE PIECES. LIMITED STOCK. NO RESTOCKS.</p>
+                <a href="merch.html" class="card-link">
+                    <h3>MERCH</h3>
+                    <p>ARCHIVE PIECES. LIMITED STOCK. NO RESTOCKS.</p>
+                </a>
             </div>
         </section>
     </main>
@@ -89,5 +115,6 @@ by aka miguel BILLY & gner.MODA
         <p>SHIPPING WORLDWIDE. NO REFUNDS.</p>
     </footer>
 
+    <script src="assets/js/index.js" defer></script>
 </body>
 </html>
